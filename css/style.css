@@ -30,7 +30,8 @@ body {
   opacity: .6; }
 
 .barra-header {
-  background-color: transparent; }
+  background-color: transparent;
+  transition: .4s; }
   .barra-header .icono {
     font-size: 1.2rem;
     position: relative; }
@@ -68,9 +69,25 @@ body {
       font-weight: bold;
       color: #152959; }
 
+.animate-barra {
+  animation: moveBarY 0.4s forwards cubic-bezier(0.215, 0.61, 0.355, 1); }
+
+@keyframes moveBarY {
+  from {
+    transform: translateY(-4rem);
+    background-color: transparent; }
+  to {
+    transform: translateY(0);
+    background-color: #2d2323; } }
 .section-blog {
-  position: relative;
-  background: linear-gradient(to right, #064437, #34bf87); }
+  position: relative; }
+  .section-blog::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #064437, #34bf87);
+    opacity: .7; }
   @media (min-width: 992px) {
     .section-blog {
       clip-path: polygon(0 12%, 100% 0%, 100% 90%, 0% 100%); } }
@@ -91,26 +108,33 @@ body {
     align-items: center;
     height: 100%; }
 
-.section-blog h3 {
-  font-size: 1.6rem;
-  font-weight: lighter;
-  color: aliceblue;
-  text-shadow: 1px 1px 3px;
-  text-align: center; }
-  @media (min-width: 992px) {
-    .section-blog h3 {
-      font-size: 3.5rem; } }
-.section-blog h4 {
-  font-weight: bold;
-  font-size: 1.4rem; }
-  @media (min-width: 992px) {
-    .section-blog h4 {
-      font-size: 2rem; } }
-.section-blog p {
-  font-size: .8rem; }
-  @media (min-width: 992px) {
-    .section-blog p {
-      font-size: 1.2rem; } }
+.section-blog {
+  height: 100vh;
+  background-image: url(../img/FOTO-3_1.jpg);
+  max-width: 100%;
+  background-size: cover;
+  background-position: center; }
+  .section-blog h3 {
+    font-size: 1.4rem;
+    font-weight: lighter;
+    color: aliceblue;
+    text-shadow: 1px 1px 3px;
+    text-align: center;
+    margin-top: 3rem; }
+    @media (min-width: 992px) {
+      .section-blog h3 {
+        font-size: 3.5rem; } }
+  .section-blog h4 {
+    font-weight: bold;
+    font-size: 1.4rem; }
+    @media (min-width: 992px) {
+      .section-blog h4 {
+        font-size: 2rem; } }
+  .section-blog p {
+    font-size: .6rem; }
+    @media (min-width: 992px) {
+      .section-blog p {
+        font-size: 1.2rem; } }
 
 .atencion-cliente .atencion-contenedor {
   display: grid;
